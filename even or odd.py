@@ -1,7 +1,8 @@
-n=int(input("enter the number"))
-if n%2==0:
-    print("even number")
-else:
-    print("odd number")
-print("sabareeshwaran ")
-print("i am engineer")
+try:
+    number = int(input("Enter a number: "))
+    if number % 2 == 0:
+        print("Even number")
+    else:
+        print("Odd number")
+except ValueError:
+    print("Please enter a whole number.")

@@ -1,17 +1,27 @@
-public class Fibonacci {
-    public static void main(String[] args) {
-        int numTerms = 10;
-        int a = 0;
-        int b = 1;
+import java.util.Scanner;
 
-        System.out.println("First " + numTerms + " Fibonacci numbers:");
+class Fibonacci {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
 
-        for (int i = 0; i < numTerms; i++) {
-            System.out.print(a + " ");
+		System.out.print("Enter the number of terms: ");
+		int terms = scanner.nextInt();
 
-            int next = a + b;
-            a = b;
-            b = next;
-        }
-    }
+		if (terms <= 0) {
+			System.out.println("Please enter a positive number.");
+			return;
+		}
+
+		long first = 0;
+		long second = 1;
+
+		System.out.print("Fibonacci sequence: ");
+		for (int i = 1; i <= terms; i++) {
+			System.out.print(first + " ");
+
+			long next = first + second;
+			first = second;
+			second = next;
+		}
+	}
 }
